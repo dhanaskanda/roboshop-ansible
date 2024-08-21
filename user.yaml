@@ -1,5 +1,6 @@
-- name: user
+- name: user component
   hosts: user
+  become: yes
   tasks:
     - name: Disable and enable nodejs
       ansibile.builtin.shell: dnf module disable nodejs -y; dnf module enable nodejs:18 -y
