@@ -27,7 +27,10 @@
   - name: Restart mongoDB services
     ansible.builtin.service:
       name: mongod
-      state: started
+      state: restarted
   
+  - name: mongo DB checks
+    ansible.builtin.debug:
+      msg: "mongodB installation is successfully completed"
 
   
