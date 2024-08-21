@@ -64,7 +64,7 @@
 
     - name: Load the user data
       ansible.builtin.command: mongo --host mongodb.dhanaskanda.online < /app/schema/user.js
-      when: user_count == "0"
+      when: user_count.stdout == "0"
 
     - name: Start and enable the user
       ansible.builtin.service:
