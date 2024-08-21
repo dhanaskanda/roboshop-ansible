@@ -58,6 +58,12 @@
     ansible.builtin.command: mongo --host mongodb.dhanaskanda.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
     register: product_count
 
+  - name: print the count
+    ansible.builtin.debug:
+      msg: "Product count: {{product_count}}"
+
+
+
   # - name: Load the catalogue data
   #   ansible.builtin.command: mongo --host mongodb.dhanaskanda.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   #     when: product_count == 0
