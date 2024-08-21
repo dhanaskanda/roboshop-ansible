@@ -34,4 +34,9 @@
     ansible.builtin.command: npm install
     args:
       chdir: /app
+  
+  - name: create catalogue service # we have already had a catalogue.service file in repostiry , hence copying to actual path.
+    ansible.builtin.copy:
+      src: catalogue.service
+      dest: /etc/systemd/system/catalogue.service
 
